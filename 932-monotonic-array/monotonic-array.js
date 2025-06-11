@@ -11,6 +11,7 @@ var isMonotonic = function(nums) {
         }else if (nums[i] < nums[i-1]){
             inc = false
         }
+        if(inc==false&&dec==false) return false
     }
     return inc || dec
 };
