@@ -6,4 +6,5 @@ class Solution:
                 for j in range(len(s)-1,i,-1):
                     if s[i] == s[j]:
                         ans=max(ans,(j-i)-1)
+                        break
         return ans
