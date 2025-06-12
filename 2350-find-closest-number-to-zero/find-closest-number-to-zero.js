@@ -7,13 +7,12 @@ var findClosestNumber = function(nums) {
     let dis = Infinity
     for(let i of nums){
         let d = Math.abs(i)
-        if(d<=dis){
+        if(d<dis){
             dis = d
-            if(num==dis){
-                num = Math.max(num,i)
-            }else{
-                num = i
-            }
+            num = i
+        }
+        else if (d==dis){
+            num = Math.max(num,i)
         }
     }
     return num
