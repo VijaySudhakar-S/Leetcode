@@ -1,10 +1,8 @@
 class Solution:
     def totalNumbers(self, digits: List[int]) -> int:
-        ans = 0
-        arr = []
-        for nums in permutations(digits,3):
-            print(nums)
-            if nums[0] !=0 and nums[-1]%2==0 and nums not in arr:
-                ans+=1
-                arr.append(nums)
-        return ans
+        sett = set()
+        for a,b,c in permutations(digits,3):
+            if a !=0 and c%2==0:
+                n = (100*a)+(10*b)+c
+                sett.add(n)
+        return len(sett)
