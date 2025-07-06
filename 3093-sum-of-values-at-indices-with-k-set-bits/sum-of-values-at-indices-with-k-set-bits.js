@@ -4,12 +4,10 @@
  * @return {number}
  */
 var sumIndicesWithKSetBits = function(nums, k) {
-    let ans = 0
-    nums.forEach((n,i)=>{
-        let a = i.toString(2).split("1").length - 1
-        if(a==k){
-            ans+=n
-        }
-    })
-    return ans
+    let sum = 0
+    for(let i=0;i<nums.length;i++){
+        let s = i.toString(2).split("").filter(n=>n=="1").length
+        if(s==k) sum+=nums[i]
+    }
+    return sum
 };
